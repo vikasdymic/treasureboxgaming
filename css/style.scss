@@ -1,0 +1,477 @@
+$body: 'Roboto', sans-serif;
+$display: 'Carter One', cursive;
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('./img/bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: $body;
+    font-size: 1.25em;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    #title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        text-shadow: 2px 2px 15px #fff;
+        h1 {
+            font-family: $display;
+            margin: 0;
+            font-size: 4.5em;
+        }
+        #title-1 {
+            color: gold;
+            margin: 0;
+            position: relative;
+            margin-left: -55px;
+            z-index: 10;
+        }
+        #title-2 {
+            color: darkkhaki;
+            position: relative;
+            margin-top: -75px;
+            margin-left: 255px;
+            margin-bottom: -10px;
+            z-index: 15;
+        }
+    }
+    nav {
+        background-color: white;
+        width: 100%;
+        margin: 20px 0 0 0;
+        height: auto;
+        ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            flex-wrap: wrap;
+            li {
+                padding: 5px 10px;
+                text-transform: uppercase;
+                font-size: 1.25em;
+                a {
+                    color: rgb(100, 100, 100);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    #carousel-wrapper {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 35px;
+        background-color: rgba(255,255,255,.9);
+        #carousel {
+            width: 900px;
+            height: 500px;
+            overflow: hidden;
+            margin: 10px 0;
+            display: grid;
+            grid-template:
+                ". . ." 1fr
+                "left . right" 50px
+                ". dots ." 1fr
+                / 50px 1fr 50px;
+            position: relative;
+            .slide {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 4;
+                height: auto;
+                width: 100%;
+                display: none;
+                justify-self: center;
+                align-self: center;
+            }
+            #dots {
+                grid-area: dots;
+                align-self: flex-end;
+                padding-bottom: 25px;
+            }
+            .prev {
+                grid-area: left;
+                z-index: 100;
+            }
+            .next {
+                grid-area: right;
+                z-index: 100;
+            }
+        }
+        p, h2 {
+            margin: 10px 0;
+            padding: 0;
+        }
+        p {
+            font-family: $body;
+            font-size: 1.5em;
+        }
+        h2 {
+            font-family: $display;
+            font-size: 3.0em;
+            font-family: $body;
+            span {
+            }
+        }
+        hr {
+            width: 100%;
+        }
+    }
+    #description {
+        display: grid;
+        grid-template:
+            "title title" auto
+            "image description" auto
+            / 2fr 4fr;
+        grid-column-gap: 33px;
+        #description-title {
+            grid-area: title;
+            h3 {
+                font-size: 0.75em;
+            }
+        }
+        #description-image {
+            grid-area: image;
+            height: 480px;
+            width: auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid black;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        #description-copy {
+            grid-area: description;
+            width: 100%;
+            ul {
+                font-size: 1.15em;
+                li {
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+    #faq {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        #faq-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            hr {
+                width: 100%;
+            }
+        }
+        #faq-content {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            h4 {
+                margin: 0;
+                padding: 0;
+                font-size: 1.55em;
+            }
+        }
+    }
+    #contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #uninstall {
+        display: grid;
+        grid-template:
+            "title title title" auto
+            "description description description" auto
+            "chrome chrome chrome" auto
+            "image1 image2 image2" auto
+            "firefox firefox firefox" auto
+            "image3 image4 image4" auto
+            "closing closing closing" auto
+            / auto auto auto;
+        grid-column-gap: 25px;
+        .title {
+            grid-area: title;
+        }
+        #description {
+            grid-area: description;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        #chrome {
+            grid-area: chrome;
+        }
+        .image {
+            width: 100%;
+            align-self: flex-start;
+            justify-self: center;
+        }
+        #chrome1 {
+            grid-area: image1;
+        }
+        #chrome2 {
+            grid-area: image2;
+        }
+        #firefox {
+            grid-area: firefox;
+        }
+        #firefox1 {
+            grid-area: image3;
+        }
+        #firefox2 {
+            grid-area: image4;
+        }
+        #closing {
+            grid-area: closing;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 55px;
+    color: rgb(100, 100, 100);
+}
+
+.wrapper {
+    height: auto;
+    width: 1000px;
+    padding: 35px;
+    background-color: rgba(255,255,255,.9);
+    margin-top: 55px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 2.0em;
+    width: 100%;
+    h3 {
+        margin: 0;
+    }
+    hr {
+        width: 100%;
+    }
+}
+.content {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    h4 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.55em;
+        text-transform: uppercase;
+    }
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 1100px) {
+    #dots {
+        padding-bottom: 35px !important;
+    }
+    #title {
+        flex-direction: column;
+        #title-coupon {
+            z-index: 10;
+        }
+        #title-clipper {
+            margin: 0;
+            margin-top: -85px;
+            margin-right: -85px;
+            padding-bottom: 25px;
+            z-index: 150 !important;
+        }
+    }
+    #carousel {
+        width: 700px !important;
+    }
+    #description {
+        display: grid;
+        grid-template:
+            "title" auto
+            "image" auto
+            "description" auto
+            / 100% !important;
+    }
+    #uninstall {
+        grid-template:
+            "title" auto
+            "description" auto
+            "chrome" auto
+            "image1" auto
+            "image2" auto
+            "firefox" auto
+            "image3" auto
+            "image4" auto
+            "closing" auto
+            / 100% !important;
+        .image {
+            align-self: center !important;
+            margin-top: 15px;
+        }
+    }
+    #uninstall {
+        grid-column-gap: 25px;
+    }
+    .content {
+        h4 {
+            font-size: 1.15em;
+        }
+    }
+    .title {
+        font-size: 1.5em;
+    }
+    .wrapper {
+        width: 700px;
+    }
+}
+@media only screen and (max-width: 820px) {
+    #description-image {
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+    
+    #carousel {
+        width: 500px !important;
+    }
+    .wrapper {
+        width: 500px;
+    }
+    #dots {
+        padding-bottom: 105px !important;
+    }
+}
+@media only screen and (max-width: 520px) {
+
+    
+    #title {
+        flex-direction: column;
+        #title-1 {
+            font-size: 2.5em;
+            margin: 0 !important;
+        }
+        #title-2 {
+            font-size: 2.75em !important;
+            margin: -35px -55px 0 0 !important;
+
+        }
+    }
+    #carousel {
+        width: 100% !important;
+    }
+    #dots {
+        display: none;
+    }
+    .wrapper {
+        width: 100%;
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
+}
